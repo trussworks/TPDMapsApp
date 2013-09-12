@@ -15,12 +15,16 @@ static NSString *const mapsBaseURLString = @"waze://";
 
 @implementation TPWazeMapsApp
 
--(NSString *)name {
+- (NSString *)name {
     return @"Waze";
 }
 
--(BOOL)isInstalled {
+- (BOOL)isInstalled {
     return [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:mapsBaseURLString]];
+}
+
+- (NSString *)identifier {
+    return mapsBaseURLString;
 }
 
 - (BOOL)openWithQuery:(NSString *)query {

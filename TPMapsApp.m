@@ -22,11 +22,26 @@
                           [[TPGoogleMapsApp alloc] init],
                           [[TPAppleMapsApp alloc] init]
                           ];
+    return mapsApps;
+}
+
++ (NSArray *)installedMapsApps {
+    NSArray *mapsApps = [self availableMapsApps];
     NSIndexSet *installedApps = [mapsApps indexesOfObjectsPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
         TPMapsApp *app = obj;
         return app.installed;
     }];
     return [mapsApps objectsAtIndexes:installedApps];
+}
+
++ (TPMapsApp *)mapsAppWithIdentifier:(NSString *)identifier {
+    NSArray *availableMapsApps = [self availableMapsApps];
+    for (TPMapsApp *app in availableMapsApps) {
+        if ([app.identifier isEqualToString:identifier]) {
+            return app;
+        }
+    }
+    return nil;
 }
 
 - (NSString *)description {
@@ -40,6 +55,12 @@
 }
 
 - (BOOL)isInstalled {
+    @throw [NSException exceptionWithName:NSInternalInconsistencyException
+                                   reason:[NSString stringWithFormat:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)]
+                                 userInfo:nil];
+}
+
+- (NSString *)identifier {
     @throw [NSException exceptionWithName:NSInternalInconsistencyException
                                    reason:[NSString stringWithFormat:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)]
                                  userInfo:nil];

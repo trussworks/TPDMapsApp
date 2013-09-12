@@ -14,12 +14,16 @@ static NSString *const mapsBaseURLString = @"comgooglemaps://";
 
 @implementation TPGoogleMapsApp
 
--(NSString *)name {
+- (NSString *)name {
     return @"Google";
 }
 
--(BOOL)isInstalled {
+- (BOOL)isInstalled {
     return [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:mapsBaseURLString]];
+}
+
+- (NSString *)identifier {
+    return mapsBaseURLString;
 }
 
 - (BOOL)openWithQuery:(NSString *)query {

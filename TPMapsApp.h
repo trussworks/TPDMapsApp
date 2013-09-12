@@ -19,8 +19,11 @@ NS_ENUM(NSInteger, TPMapsAppTravelMode) {
 
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly, getter = isInstalled) BOOL installed;
+@property (nonatomic, readonly) NSString *identifier;
 
 + (NSArray *)availableMapsApps;
++ (NSArray *)installedMapsApps;
++ (TPMapsApp *)mapsAppWithIdentifier:(NSString *)identifier;
 
 - (BOOL)isInstalled;
 

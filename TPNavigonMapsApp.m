@@ -23,6 +23,10 @@ static NSString *const mapsBaseURLString = @"navigon://";
     return [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:mapsBaseURLString]];
 }
 
+- (NSString *)identifier {
+    return mapsBaseURLString;
+}
+
 // NOTE: The Navigon is stupid as shit. We'll need to geocode the query string so as to not hurt its tiny brain
 - (BOOL)openWithQuery:(NSString *)query {
     return NO;
