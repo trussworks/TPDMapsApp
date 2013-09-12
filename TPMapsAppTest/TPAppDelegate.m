@@ -19,8 +19,9 @@
     NSArray *availableMapsApps = [TPMapsApp availableMapsApps];
     NSLog(@"available maps apps: %@", availableMapsApps);
     CLLocation *location = [[CLLocation alloc] initWithLatitude:37.77493 longitude:-122.419416];
-    
-    TPMapsApp *defaultMapsApp = [availableMapsApps objectAtIndex:0];
+    NSArray *installedMapsApps = [TPMapsApp installedMapsApps];
+    NSLog(@"installed maps apps: %@", installedMapsApps);
+    TPMapsApp *defaultMapsApp = [installedMapsApps objectAtIndex:0];
     [defaultMapsApp openForDirectionsWithStart:[NSString stringWithFormat:@"%f,%f",
                                                 location.coordinate.latitude,
                                                 location.coordinate.longitude]
