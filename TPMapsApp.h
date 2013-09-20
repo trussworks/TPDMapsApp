@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ENUM(NSInteger, TPMapsAppTravelMode) {
+NS_ENUM(NSUInteger, TPMapsAppTravelMode) {
     TPMapsAppTravelModeNone = 0,
     TPMapsAppTravelModeDriving = 1,
     TPMapsAppTravelModeWalking = 2,
