@@ -15,6 +15,12 @@ TPMapApp helps you launch the right external mapping application.
   s.source_files = '*MapsApp.{h,m}'
   s.requires_arc = true
 
-  s.ios.deployment_target = '6.0'
-  s.osx.deployment_target = '10.7'
+  s.ios.deployment_target = '7.0'
+
+  s.prefix_header_contents = <<-EOS
+#import <Availability.h>
+#import <SystemConfiguration/SystemConfiguration.h>
+#import <MobileCoreServices/MobileCoreServices.h>
+#import <Security/Security.h>
+EOS
 end
