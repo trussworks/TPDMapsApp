@@ -14,6 +14,8 @@
 
 @implementation TPMapsApp
 
+#pragma mark - Class methods
+
 + (NSArray *)availableMapsApps {
     // The order of this array is important; it should be ordered from least common to most common so that
     // we default to  maps app that the customer has explicitly installed, and then fall back to the common ones.
@@ -44,9 +46,27 @@
     return nil;
 }
 
+#pragma mark - NSObject
+
 - (NSString *)description {
     return [NSString stringWithFormat:@"<TPMapApp name:%@>", self.name];
 }
+
+- (BOOL)isEqual:(id)object {
+    if (self == object) {
+        return YES;
+    }
+    if (! [object isKindOfClass:[self class]]) {
+        return NO;
+    }
+    return [self isEqualToMapsApp:object];
+}
+
+- (NSUInteger)hash {
+    return [self.identifier hash];
+}
+
+#pragma mark - TPMapsApp
 
 - (NSString *)name {
     @throw [NSException exceptionWithName:NSInternalInconsistencyException
@@ -64,6 +84,13 @@
     @throw [NSException exceptionWithName:NSInternalInconsistencyException
                                    reason:[NSString stringWithFormat:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)]
                                  userInfo:nil];
+}
+
+- (BOOL)isEqualToMapsApp:(TPMapsApp *)mapsApp {
+    if (! mapsApp) {
+        return NO;
+    }
+    return [self.identifier isEqualToString:mapsApp.identifier];
 }
 
 - (BOOL)openWithQuery:(NSString *)query {

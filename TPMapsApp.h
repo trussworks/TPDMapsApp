@@ -27,6 +27,8 @@ NS_ENUM(NSUInteger, TPMapsAppTravelMode) {
 
 - (BOOL)isInstalled;
 
+- (BOOL)isEqualToMapsApp:(TPMapsApp *)mapsApp;
+
 // 'Cupertino', or '37.77493,-122.419416'
 - (BOOL)openWithQuery:(NSString *)query;
 
