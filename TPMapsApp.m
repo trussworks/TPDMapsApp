@@ -6,6 +6,7 @@
 //
 
 #import <AFNetworking/AFNetworking.h>
+#import <dispatch/dispatch.h>
 
 #import "TPMapsApp.h"
 #import "TPAppleMapsApp.h"
@@ -17,13 +18,18 @@
 #pragma mark - Class methods
 
 + (NSArray *)availableMapsApps {
-    // The order of this array is important; it should be ordered from least common to most common so that
-    // we default to  maps app that the customer has explicitly installed, and then fall back to the common ones.
-    NSArray *mapsApps = @[
-                          [[TPWazeMapsApp alloc] init],
-                          [[TPGoogleMapsApp alloc] init],
-                          [[TPAppleMapsApp alloc] init]
-                          ];
+    static NSArray *mapsApps;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        // The order of this array is important; it should be ordered from least common to most common so that
+        // we default to  maps app that the customer has explicitly installed, and then fall back to the common ones.
+        mapsApps = @[
+                     [[TPWazeMapsApp alloc] init],
+                     [[TPGoogleMapsApp alloc] init],
+                     [[TPAppleMapsApp alloc] init]
+                     ];
+
+    });
     return mapsApps;
 }
 
