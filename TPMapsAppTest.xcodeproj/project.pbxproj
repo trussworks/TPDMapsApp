@@ -203,6 +203,11 @@
 				CLASSPREFIX = TP;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = Tetherpad;
+				TargetAttributes = {
+					86094C3317E115C600D95E8D = {
+						DevelopmentTeam = J74T7566DT;
+					};
+				};
 			};
 			buildConfigurationList = 86094C2F17E115C600D95E8D /* Build configuration list for PBXProject "TPMapsAppTest" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -429,6 +434,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TPMapsAppTest/TPMapsAppTest-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/TPMapsAppTest/TPMapsAppTest-Info.plist";
@@ -443,6 +449,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TPMapsAppTest/TPMapsAppTest-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/TPMapsAppTest/TPMapsAppTest-Info.plist";
