@@ -24,7 +24,7 @@ NS_ENUM(NSUInteger, TPMapsAppTravelMode) {
 @property (nonatomic, readonly) NSString *name;
 
 /**
- If the maps application in question is installed on the device.
+ Is the maps application in question is installed on the device?
  */
 @property (nonatomic, readonly, getter = isInstalled) BOOL installed;
 
@@ -44,7 +44,7 @@ NS_ENUM(NSUInteger, TPMapsAppTravelMode) {
 + (NSArray *)installedMapsApps;
 
 /**
- @return A TPMapsApp for an identifier previously obtained from the identifier property.
+ @return A TPMapsApp for an identifier previously obtained from the identifier property. Useful for opening a map application that the customer has selected previously that you've stashed in `NSUserDefaults`.
  */
 + (TPMapsApp *)mapsAppWithIdentifier:(NSString *)identifier;
 
@@ -69,7 +69,7 @@ NS_ENUM(NSUInteger, TPMapsAppTravelMode) {
  
  @param start The query string representing the directions start location.
  @param destination The query string representing the directions destination.
- @param travelMode The preferred travel mode for the directions. Depending on the app used, some of these modes will not be available.
+ @param travelMode The preferred travel mode for the directions. Depending on the app used, some of these modes will not be available. If in doubt, use TPMapsAppTravelModeDriving as a sane default.
  
  @return YES if the maps app opened successfully, NO otherwise.
  */
