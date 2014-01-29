@@ -1,9 +1,14 @@
 Pod::Spec.new do |s|
   s.name         = "TPMapsApp"
   s.version      = "1.0.0"
-  s.summary      = "A class to help deal with the variety of mapping apps."
+  s.summary      = "A class to help deal with the variety of mapping apps on iOS."
   s.description  = <<-DESC
-TPMapApp helps you launch the right external mapping application.
+TPMapsApp helps you launch the right external mapping application.
+
+It detects installed applications and provides APIs to automatically
+select the most desirable one or to easily create preferences UI to
+allow the customer to select their own.
+
                    DESC
   s.homepage     = "https://github.com/tetherpad/TPMapsApp"
   s.license      = 'MIT'
@@ -12,7 +17,7 @@ TPMapApp helps you launch the right external mapping application.
     :git => "git@github.com:tetherpad/TPMapsApp.git", 
     :tag => "1.0.0"
   }
-  s.source_files = '*MapsApp.{h,m}'
+  s.source_files = 'TP*MapsApp.{h,m}'
   s.requires_arc = true
 
   s.ios.deployment_target = '7.0'
