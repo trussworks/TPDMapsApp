@@ -1,6 +1,6 @@
 //
-//  TPMotionXGPSMapsApp.m
-//  TPMapsAppTest
+//  TPDMotionXGPSMapsApp.m
+//  TPDMapsAppTest
 //
 //  Created by Mark Ferlatte on 9/11/13.
 //  Copyright (c) 2013 Tetherpad. All rights reserved.
@@ -9,10 +9,10 @@
 // Motion X URL documentation:
 // http://www.motionx.com/gps/partnerapps/MotionX-GPS-Custom-URL-API.pdf
 
-#import "TPMotionXGPSMapsApp.h"
+#import "TPDMotionXGPSMapsApp.h"
 
 static NSString *const mapsBaseURLString = @"motionxgps://";
 
-@implementation TPMotionXGPSMapsApp
+@implementation TPDMotionXGPSMapsApp
 
 @end

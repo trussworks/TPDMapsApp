@@ -1,5 +1,5 @@
 //
-//  TPMapsApp.m
+//  TPDMapsApp.m
 //
 //  Created by Mark Ferlatte on 9/11/13.
 //  Copyright (c) 2013 Tetherpad, Inc. All rights reserved.
@@ -8,12 +8,12 @@
 #import <AFNetworking/AFNetworking.h>
 #import <dispatch/dispatch.h>
 
-#import "TPMapsApp.h"
-#import "TPAppleMapsApp.h"
-#import "TPGoogleMapsApp.h"
-#import "TPWazeMapsApp.h"
+#import "TPDMapsApp.h"
+#import "TPDAppleMapsApp.h"
+#import "TPDGoogleMapsApp.h"
+#import "TPDWazeMapsApp.h"
 
-@implementation TPMapsApp
+@implementation TPDMapsApp
 
 #pragma mark - Class methods
 
@@ -24,9 +24,9 @@
         // The order of this array is important; it should be ordered from least common to most common so that
         // we default to  maps app that the customer has explicitly installed, and then fall back to the common ones.
         mapsApps = @[
-                     [[TPWazeMapsApp alloc] init],
-                     [[TPGoogleMapsApp alloc] init],
-                     [[TPAppleMapsApp alloc] init]
+                     [[TPDWazeMapsApp alloc] init],
+                     [[TPDGoogleMapsApp alloc] init],
+                     [[TPDAppleMapsApp alloc] init]
                      ];
 
     });
@@ -36,15 +36,15 @@
 + (NSArray *)installedMapsApps {
     NSArray *mapsApps = [self availableMapsApps];
     NSIndexSet *installedApps = [mapsApps indexesOfObjectsPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
-        TPMapsApp *app = obj;
+        TPDMapsApp *app = obj;
         return app.installed;
     }];
     return [mapsApps objectsAtIndexes:installedApps];
 }
 
-+ (TPMapsApp *)mapsAppWithIdentifier:(NSString *)identifier {
++ (TPDMapsApp *)mapsAppWithIdentifier:(NSString *)identifier {
     NSArray *availableMapsApps = [self availableMapsApps];
-    for (TPMapsApp *app in availableMapsApps) {
+    for (TPDMapsApp *app in availableMapsApps) {
         if ([app.identifier isEqualToString:identifier]) {
             return app;
         }
@@ -55,7 +55,7 @@
 #pragma mark - NSObject
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"<TPMapApp name:%@>", self.name];
+    return [NSString stringWithFormat:@"<TPDMapApp name:%@>", self.name];
 }
 
 - (BOOL)isEqual:(id)object {
@@ -72,7 +72,7 @@
     return [self.identifier hash];
 }
 
-#pragma mark - TPMapsApp
+#pragma mark - TPDMapsApp
 
 - (NSString *)name {
     @throw [NSException exceptionWithName:NSInternalInconsistencyException
@@ -92,7 +92,7 @@
                                  userInfo:nil];
 }
 
-- (BOOL)isEqualToMapsApp:(TPMapsApp *)mapsApp {
+- (BOOL)isEqualToMapsApp:(TPDMapsApp *)mapsApp {
     if (! mapsApp) {
         return NO;
     }
@@ -107,7 +107,7 @@
 
 - (BOOL)openForDirectionsWithStart:(NSString *)start
                        destination:(NSString *)destination
-                        travelMode:(enum TPMapsAppTravelMode)travelMode {
+                        travelMode:(enum TPDMapsAppTravelMode)travelMode {
     @throw [NSException exceptionWithName:NSInternalInconsistencyException
                                    reason:[NSString stringWithFormat:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)]
                                  userInfo:nil];

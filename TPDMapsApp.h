@@ -1,5 +1,5 @@
 //
-//  TPMapsApp.h
+//  TPDMapsApp.h
 //
 //  Created by Mark Ferlatte on 9/11/13.
 //  Copyright (c) 2013 Tetherpad, Inc. All rights reserved.
@@ -8,15 +8,15 @@
 #import <Foundation/Foundation.h>
 
 
-NS_ENUM(NSUInteger, TPMapsAppTravelMode) {
-    TPMapsAppTravelModeNone = 0,
-    TPMapsAppTravelModeDriving = 1,
-    TPMapsAppTravelModeWalking = 2,
-    TPMapsAppTravelModeBicycling = 3,
-    TPMapsAppTravelModeTransit = 4
+NS_ENUM(NSUInteger, TPDMapsAppTravelMode) {
+    TPDMapsAppTravelModeNone = 0,
+    TPDMapsAppTravelModeDriving = 1,
+    TPDMapsAppTravelModeWalking = 2,
+    TPDMapsAppTravelModeBicycling = 3,
+    TPDMapsAppTravelModeTransit = 4
 };
 
-@interface TPMapsApp : NSObject
+@interface TPDMapsApp : NSObject
 
 /**
  The name of the maps application, suitable for showing to the customer.
@@ -34,26 +34,26 @@ NS_ENUM(NSUInteger, TPMapsAppTravelMode) {
 @property (nonatomic, readonly) NSString *identifier;
 
 /**
- @return An array of `TPMapsApp` objects representing every maps application that TPMapsApp knows about.
+ @return An array of `TPDMapsApp` objects representing every maps application that TPDMapsApp knows about.
  */
 + (NSArray *)availableMapsApps;
 
 /**
- @return An array of `TPMapsApp' objects for maps applications that are installed.
+ @return An array of `TPDMapsApp' objects for maps applications that are installed.
  */
 + (NSArray *)installedMapsApps;
 
 /**
- @return A TPMapsApp for an identifier previously obtained from the identifier property. Useful for opening a map application that the customer has selected previously that you've stashed in `NSUserDefaults`.
+ @return A TPDMapsApp for an identifier previously obtained from the identifier property. Useful for opening a map application that the customer has selected previously that you've stashed in `NSUserDefaults`.
  */
-+ (TPMapsApp *)mapsAppWithIdentifier:(NSString *)identifier;
++ (TPDMapsApp *)mapsAppWithIdentifier:(NSString *)identifier;
 
 - (BOOL)isInstalled;
 
 /**
- @return YES if the TPMapsApp objects refer to the same maps app, even if they are different objects.
+ @return YES if the TPDMapsApp objects refer to the same maps app, even if they are different objects.
  */
-- (BOOL)isEqualToMapsApp:(TPMapsApp *)mapsApp;
+- (BOOL)isEqualToMapsApp:(TPDMapsApp *)mapsApp;
 
 /**
  Open the maps application and pass it the map query.
@@ -69,13 +69,13 @@ NS_ENUM(NSUInteger, TPMapsAppTravelMode) {
  
  @param start The query string representing the directions start location.
  @param destination The query string representing the directions destination.
- @param travelMode The preferred travel mode for the directions. Depending on the app used, some of these modes will not be available. If in doubt, use TPMapsAppTravelModeDriving as a sane default.
+ @param travelMode The preferred travel mode for the directions. Depending on the app used, some of these modes will not be available. If in doubt, use TPDMapsAppTravelModeDriving as a sane default.
  
  @return YES if the maps app opened successfully, NO otherwise.
  */
 - (BOOL)openForDirectionsWithStart:(NSString *)start
                        destination:(NSString *)destination
-                        travelMode:(enum TPMapsAppTravelMode)travelMode;
+                        travelMode:(enum TPDMapsAppTravelMode)travelMode;
 
 - (BOOL)openMapsAppWithBaseURLString:(NSString *)baseURLString params:(NSDictionary *)params;
 

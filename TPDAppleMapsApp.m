@@ -1,5 +1,5 @@
 //
-//  TPAppleMapsApp.m
+//  TPDAppleMapsApp.m
 //
 //  Created by Mark Ferlatte on 9/11/13.
 //  Copyright (c) 2013 Tetherpad. All rights reserved.
@@ -8,11 +8,11 @@
 // Apple Maps URL documentation:
 // http://developer.apple.com/library/ios/#featuredarticles/iPhoneURLScheme_Reference/Articles/MapLinks.html
 
-#import "TPAppleMapsApp.h"
+#import "TPDAppleMapsApp.h"
 
 static NSString *const mapsBaseURLString = @"http://maps.apple.com/";
 
-@implementation TPAppleMapsApp
+@implementation TPDAppleMapsApp
 
 - (NSString *)name {
     return @"Apple";
@@ -35,7 +35,7 @@ static NSString *const mapsBaseURLString = @"http://maps.apple.com/";
 
 - (BOOL)openForDirectionsWithStart:(NSString *)start
                        destination:(NSString *)destination
-                        travelMode:(enum TPMapsAppTravelMode)travelMode {
+                        travelMode:(enum TPDMapsAppTravelMode)travelMode {
     NSDictionary *params = @{
                              @"saddr" : start,
                              @"daddr" : destination

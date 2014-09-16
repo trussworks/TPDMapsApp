@@ -1,6 +1,6 @@
 //
-//  TPWazeMapsApp.m
-//  TPMapsAppTest
+//  TPDWazeMapsApp.m
+//  TPDMapsAppTest
 //
 //  Created by Mark Ferlatte on 9/11/13.
 //  Copyright (c) 2013 Tetherpad. All rights reserved.
@@ -9,11 +9,11 @@
 // Waze URL documentation:
 // http://www.waze.com/dev/documentation/
 
-#import "TPWazeMapsApp.h"
+#import "TPDWazeMapsApp.h"
 
 static NSString *const mapsBaseURLString = @"waze://";
 
-@implementation TPWazeMapsApp
+@implementation TPDWazeMapsApp
 
 - (NSString *)name {
     return @"Waze";
@@ -36,7 +36,7 @@ static NSString *const mapsBaseURLString = @"waze://";
 
 - (BOOL)openForDirectionsWithStart:(NSString *)start
                        destination:(NSString *)destination
-                        travelMode:(enum TPMapsAppTravelMode)travelMode {
+                        travelMode:(enum TPDMapsAppTravelMode)travelMode {
     NSDictionary *params = @{
                              @"q" : destination,
                              @"navigate" : @"yes"

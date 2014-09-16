@@ -1,5 +1,5 @@
 //
-//  TPGoogleMapsApp.m
+//  TPDGoogleMapsApp.m
 //
 //  Created by Mark Ferlatte on 9/11/13.
 //  Copyright (c) 2013 Tetherpad. All rights reserved.
@@ -8,11 +8,11 @@
 // Google Maps URL documentation:
 // https://developers.google.com/maps/documentation/ios/urlscheme
 
-#import "TPGoogleMapsApp.h"
+#import "TPDGoogleMapsApp.h"
 
 static NSString *const mapsBaseURLString = @"comgooglemaps://";
 
-@implementation TPGoogleMapsApp
+@implementation TPDGoogleMapsApp
 
 - (NSString *)name {
     return @"Google";
@@ -35,22 +35,22 @@ static NSString *const mapsBaseURLString = @"comgooglemaps://";
 
 - (BOOL)openForDirectionsWithStart:(NSString *)start
                        destination:(NSString *)destination
-                        travelMode:(enum TPMapsAppTravelMode)travelMode {
+                        travelMode:(enum TPDMapsAppTravelMode)travelMode {
     NSString *directionsMode = nil;
     switch (travelMode) {
-        case TPMapsAppTravelModeDriving:
+        case TPDMapsAppTravelModeDriving:
             directionsMode = @"driving";
             break;
         
-        case TPMapsAppTravelModeWalking:
+        case TPDMapsAppTravelModeWalking:
             directionsMode = @"walking";
             break;
             
-        case TPMapsAppTravelModeTransit:
+        case TPDMapsAppTravelModeTransit:
             directionsMode = @"transit";
             break;
             
-        case TPMapsAppTravelModeBicycling:
+        case TPDMapsAppTravelModeBicycling:
             directionsMode = @"walking"; // Hopefully we'll get bicycling directions in the future
             break;
             

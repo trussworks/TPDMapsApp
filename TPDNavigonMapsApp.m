@@ -1,6 +1,6 @@
 //
-//  TPNavigonMapsApp.m
-//  TPMapsAppTest
+//  TPDNavigonMapsApp.m
+//  TPDMapsAppTest
 //
 //  Created by Mark Ferlatte on 9/11/13.
 //  Copyright (c) 2013 Tetherpad. All rights reserved.
@@ -9,11 +9,11 @@
 // Navigon URL documentation
 // http://www.navigon.com/portal/common/faq/files/NAVIGON_AppInteract.pdf
 
-#import "TPNavigonMapsApp.h"
+#import "TPDNavigonMapsApp.h"
 
 static NSString *const mapsBaseURLString = @"navigon://";
 
-@implementation TPNavigonMapsApp
+@implementation TPDNavigonMapsApp
 
 -(NSString *)name {
     return @"Navigon";
@@ -34,7 +34,7 @@ static NSString *const mapsBaseURLString = @"navigon://";
 
 - (BOOL)openForDirectionsWithStart:(NSString *)start
                        destination:(NSString *)destination
-                        travelMode:(enum TPMapsAppTravelMode)travelMode {
+                        travelMode:(enum TPDMapsAppTravelMode)travelMode {
     return NO;
 }
 @end
