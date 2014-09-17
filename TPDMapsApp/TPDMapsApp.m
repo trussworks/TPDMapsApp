@@ -115,10 +115,15 @@
 }
 
 - (BOOL)openMapsAppWithBaseURLString:(NSString *)baseURLString params:(NSDictionary *)params {
-//    NSString *queryString = [NSString stringWithFormat:@"?%@",
-//                             AFQueryStringFromParametersWithEncoding(params, NSUTF8StringEncoding)];
-    NSString *mapURLString = [baseURLString stringByAppendingString:nil];
-    return [[UIApplication sharedApplication] openURL:[NSURL URLWithString:mapURLString]];
+    NSMutableArray *queryItems = [NSMutableArray array];
+    for (NSString *key in params) {
+        NSURLQueryItem *item = [NSURLQueryItem queryItemWithName:key value:[params objectForKey:key]];
+        [queryItems addObject:item];
+    }
+    NSURLComponents *mapURLComponent = [NSURLComponents componentsWithString:baseURLString];
+    mapURLComponent.queryItems = queryItems;
+    NSLog(@"URL string: %@", mapURLComponent.string);
+    return [[UIApplication sharedApplication] openURL:mapURLComponent.URL];
 }
 
 @end
