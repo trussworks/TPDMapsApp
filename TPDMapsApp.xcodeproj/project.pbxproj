@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8623CA5E19C9041300A1B962 /* TPDAppleMapsApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 8623CA5119C9041300A1B962 /* TPDAppleMapsApp.m */; };
+		8623CA5F19C9041300A1B962 /* TPDGoogleMapsApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 8623CA5319C9041300A1B962 /* TPDGoogleMapsApp.m */; };
+		8623CA6019C9041300A1B962 /* TPDMapQuestMapsApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 8623CA5519C9041300A1B962 /* TPDMapQuestMapsApp.m */; };
+		8623CA6119C9041300A1B962 /* TPDMapsApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 8623CA5719C9041300A1B962 /* TPDMapsApp.m */; };
+		8623CA6219C9041300A1B962 /* TPDMotionXGPSMapsApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 8623CA5919C9041300A1B962 /* TPDMotionXGPSMapsApp.m */; };
+		8623CA6319C9041300A1B962 /* TPDNavigonMapsApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 8623CA5B19C9041300A1B962 /* TPDNavigonMapsApp.m */; };
+		8623CA6419C9041300A1B962 /* TPDWazeMapsApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 8623CA5D19C9041300A1B962 /* TPDWazeMapsApp.m */; };
 		86DE9BEF19C9033C00ADF38E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 86DE9BEE19C9033C00ADF38E /* main.m */; };
 		86DE9BF219C9033C00ADF38E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 86DE9BF119C9033C00ADF38E /* AppDelegate.m */; };
 		86DE9BF519C9033C00ADF38E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86DE9BF419C9033C00ADF38E /* ViewController.m */; };
@@ -27,6 +34,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8623CA5019C9041300A1B962 /* TPDAppleMapsApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDAppleMapsApp.h; sourceTree = "<group>"; };
+		8623CA5119C9041300A1B962 /* TPDAppleMapsApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDAppleMapsApp.m; sourceTree = "<group>"; };
+		8623CA5219C9041300A1B962 /* TPDGoogleMapsApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDGoogleMapsApp.h; sourceTree = "<group>"; };
+		8623CA5319C9041300A1B962 /* TPDGoogleMapsApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDGoogleMapsApp.m; sourceTree = "<group>"; };
+		8623CA5419C9041300A1B962 /* TPDMapQuestMapsApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDMapQuestMapsApp.h; sourceTree = "<group>"; };
+		8623CA5519C9041300A1B962 /* TPDMapQuestMapsApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDMapQuestMapsApp.m; sourceTree = "<group>"; };
+		8623CA5619C9041300A1B962 /* TPDMapsApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDMapsApp.h; sourceTree = "<group>"; };
+		8623CA5719C9041300A1B962 /* TPDMapsApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDMapsApp.m; sourceTree = "<group>"; };
+		8623CA5819C9041300A1B962 /* TPDMotionXGPSMapsApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDMotionXGPSMapsApp.h; sourceTree = "<group>"; };
+		8623CA5919C9041300A1B962 /* TPDMotionXGPSMapsApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDMotionXGPSMapsApp.m; sourceTree = "<group>"; };
+		8623CA5A19C9041300A1B962 /* TPDNavigonMapsApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDNavigonMapsApp.h; sourceTree = "<group>"; };
+		8623CA5B19C9041300A1B962 /* TPDNavigonMapsApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDNavigonMapsApp.m; sourceTree = "<group>"; };
+		8623CA5C19C9041300A1B962 /* TPDWazeMapsApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDWazeMapsApp.h; sourceTree = "<group>"; };
+		8623CA5D19C9041300A1B962 /* TPDWazeMapsApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDWazeMapsApp.m; sourceTree = "<group>"; };
 		86DE9BE919C9033C00ADF38E /* TPDMapsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TPDMapsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86DE9BED19C9033C00ADF38E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86DE9BEE19C9033C00ADF38E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -81,6 +102,20 @@
 		86DE9BEB19C9033C00ADF38E /* TPDMapsApp */ = {
 			isa = PBXGroup;
 			children = (
+				8623CA5019C9041300A1B962 /* TPDAppleMapsApp.h */,
+				8623CA5119C9041300A1B962 /* TPDAppleMapsApp.m */,
+				8623CA5219C9041300A1B962 /* TPDGoogleMapsApp.h */,
+				8623CA5319C9041300A1B962 /* TPDGoogleMapsApp.m */,
+				8623CA5419C9041300A1B962 /* TPDMapQuestMapsApp.h */,
+				8623CA5519C9041300A1B962 /* TPDMapQuestMapsApp.m */,
+				8623CA5619C9041300A1B962 /* TPDMapsApp.h */,
+				8623CA5719C9041300A1B962 /* TPDMapsApp.m */,
+				8623CA5819C9041300A1B962 /* TPDMotionXGPSMapsApp.h */,
+				8623CA5919C9041300A1B962 /* TPDMotionXGPSMapsApp.m */,
+				8623CA5A19C9041300A1B962 /* TPDNavigonMapsApp.h */,
+				8623CA5B19C9041300A1B962 /* TPDNavigonMapsApp.m */,
+				8623CA5C19C9041300A1B962 /* TPDWazeMapsApp.h */,
+				8623CA5D19C9041300A1B962 /* TPDWazeMapsApp.m */,
 				86DE9BF019C9033C00ADF38E /* AppDelegate.h */,
 				86DE9BF119C9033C00ADF38E /* AppDelegate.m */,
 				86DE9BF319C9033C00ADF38E /* ViewController.h */,
@@ -219,7 +254,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8623CA5E19C9041300A1B962 /* TPDAppleMapsApp.m in Sources */,
+				8623CA6019C9041300A1B962 /* TPDMapQuestMapsApp.m in Sources */,
 				86DE9BF519C9033C00ADF38E /* ViewController.m in Sources */,
+				8623CA6219C9041300A1B962 /* TPDMotionXGPSMapsApp.m in Sources */,
+				8623CA6419C9041300A1B962 /* TPDWazeMapsApp.m in Sources */,
+				8623CA6319C9041300A1B962 /* TPDNavigonMapsApp.m in Sources */,
+				8623CA6119C9041300A1B962 /* TPDMapsApp.m in Sources */,
+				8623CA5F19C9041300A1B962 /* TPDGoogleMapsApp.m in Sources */,
 				86DE9BF219C9033C00ADF38E /* AppDelegate.m in Sources */,
 				86DE9BEF19C9033C00ADF38E /* main.m in Sources */,
 			);
@@ -414,6 +456,7 @@
 				86DE9C0E19C9033D00ADF38E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		86DE9C0F19C9033D00ADF38E /* Build configuration list for PBXNativeTarget "TPDMapsAppTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +465,7 @@
 				86DE9C1119C9033D00ADF38E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

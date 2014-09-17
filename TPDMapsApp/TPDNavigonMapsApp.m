@@ -9,6 +9,7 @@
 // Navigon URL documentation
 // http://www.navigon.com/portal/common/faq/files/NAVIGON_AppInteract.pdf
 
+#import <UIKit/UIKit.h>
 #import "TPDNavigonMapsApp.h"
 
 static NSString *const mapsBaseURLString = @"navigon://";

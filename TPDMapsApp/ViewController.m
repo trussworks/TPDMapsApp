@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Tetherpad. All rights reserved.
 //
 
+#import "TPDMapsApp.h"
 #import "ViewController.h"
 
 @interface ViewController ()

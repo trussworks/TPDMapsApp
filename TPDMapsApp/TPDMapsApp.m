@@ -5,7 +5,8 @@
 //  Copyright (c) 2013 Tetherpad, Inc. All rights reserved.
 //
 
-#import <AFNetworking/AFNetworking.h>
+// #import <AFNetworking/AFNetworking.h>
+#import <UIKit/UIKit.h>
 #import <dispatch/dispatch.h>
 
 #import "TPDMapsApp.h"
@@ -114,9 +115,9 @@
 }
 
 - (BOOL)openMapsAppWithBaseURLString:(NSString *)baseURLString params:(NSDictionary *)params {
-    NSString *queryString = [NSString stringWithFormat:@"?%@",
-                             AFQueryStringFromParametersWithEncoding(params, NSUTF8StringEncoding)];
-    NSString *mapURLString = [baseURLString stringByAppendingString:queryString];
+//    NSString *queryString = [NSString stringWithFormat:@"?%@",
+//                             AFQueryStringFromParametersWithEncoding(params, NSUTF8StringEncoding)];
+    NSString *mapURLString = [baseURLString stringByAppendingString:nil];
     return [[UIApplication sharedApplication] openURL:[NSURL URLWithString:mapURLString]];
 }
 
