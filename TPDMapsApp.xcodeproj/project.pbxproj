@@ -14,6 +14,7 @@
 		8623CA6219C9041300A1B962 /* TPDMotionXGPSMapsApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 8623CA5919C9041300A1B962 /* TPDMotionXGPSMapsApp.m */; };
 		8623CA6319C9041300A1B962 /* TPDNavigonMapsApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 8623CA5B19C9041300A1B962 /* TPDNavigonMapsApp.m */; };
 		8623CA6419C9041300A1B962 /* TPDWazeMapsApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 8623CA5D19C9041300A1B962 /* TPDWazeMapsApp.m */; };
+		8623CA6719C9D2BB00A1B962 /* TPDURLQueryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8623CA6619C9D2BB00A1B962 /* TPDURLQueryItem.m */; };
 		86DE9BEF19C9033C00ADF38E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 86DE9BEE19C9033C00ADF38E /* main.m */; };
 		86DE9BF219C9033C00ADF38E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 86DE9BF119C9033C00ADF38E /* AppDelegate.m */; };
 		86DE9BF519C9033C00ADF38E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86DE9BF419C9033C00ADF38E /* ViewController.m */; };
@@ -48,6 +49,8 @@
 		8623CA5B19C9041300A1B962 /* TPDNavigonMapsApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TPDNavigonMapsApp.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		8623CA5C19C9041300A1B962 /* TPDWazeMapsApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = TPDWazeMapsApp.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		8623CA5D19C9041300A1B962 /* TPDWazeMapsApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TPDWazeMapsApp.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		8623CA6519C9D2BB00A1B962 /* TPDURLQueryItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDURLQueryItem.h; sourceTree = "<group>"; };
+		8623CA6619C9D2BB00A1B962 /* TPDURLQueryItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDURLQueryItem.m; sourceTree = "<group>"; };
 		86DE9BE919C9033C00ADF38E /* TPDMapsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TPDMapsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86DE9BED19C9033C00ADF38E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86DE9BEE19C9033C00ADF38E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = main.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
@@ -116,6 +119,8 @@
 				8623CA5B19C9041300A1B962 /* TPDNavigonMapsApp.m */,
 				8623CA5C19C9041300A1B962 /* TPDWazeMapsApp.h */,
 				8623CA5D19C9041300A1B962 /* TPDWazeMapsApp.m */,
+				8623CA6519C9D2BB00A1B962 /* TPDURLQueryItem.h */,
+				8623CA6619C9D2BB00A1B962 /* TPDURLQueryItem.m */,
 				86DE9BF019C9033C00ADF38E /* AppDelegate.h */,
 				86DE9BF119C9033C00ADF38E /* AppDelegate.m */,
 				86DE9BF319C9033C00ADF38E /* ViewController.h */,
@@ -264,6 +269,7 @@
 				8623CA5F19C9041300A1B962 /* TPDGoogleMapsApp.m in Sources */,
 				86DE9BF219C9033C00ADF38E /* AppDelegate.m in Sources */,
 				86DE9BEF19C9033C00ADF38E /* main.m in Sources */,
+				8623CA6719C9D2BB00A1B962 /* TPDURLQueryItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,7 +369,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_LABEL = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -423,7 +429,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_LABEL = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

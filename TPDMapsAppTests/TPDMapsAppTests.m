@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
+#import "TPDMapsApp.h"
 
 @interface TPDMapsAppTests : XCTestCase
 
@@ -23,6 +24,11 @@
 - (void)tearDown {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
+}
+
+- (void)testNumberOfInstalledMapsApps {
+    NSArray *installedApps = [TPDMapsApp installedMapsApps];
+    XCTAssertEqual([installedApps count], 1UL);
 }
 
 - (void)testExample {
