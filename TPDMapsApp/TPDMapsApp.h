@@ -79,4 +79,6 @@ NS_ENUM(NSUInteger, TPDMapsAppTravelMode) {
 
 - (BOOL)openMapsAppWithBaseURLString:(NSString *)baseURLString params:(NSDictionary *)params;
 
+- (NSURL *)mapsAppURLWithBaseURLString:(NSString *)baseURLString params:(NSDictionary *)params;
+
 @end
