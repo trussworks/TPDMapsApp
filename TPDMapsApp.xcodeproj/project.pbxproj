@@ -17,6 +17,7 @@
 		86C1E5F719D1E58C00096A8C /* TPDURLQueryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C1E5EE19D1E58C00096A8C /* TPDURLQueryItem.m */; };
 		86C1E5F819D1E58C00096A8C /* TPDWazeMapsApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C1E5F019D1E58C00096A8C /* TPDWazeMapsApp.m */; };
 		86C1E5FA19D1EA0800096A8C /* TPDURLUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C1E5F919D1EA0800096A8C /* TPDURLUtilities.m */; };
+		86C1E5FD19D1FDDE00096A8C /* TPDURLUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C1E5FC19D1FDDE00096A8C /* TPDURLUtilitiesTests.m */; };
 		86DE9BEF19C9033C00ADF38E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 86DE9BEE19C9033C00ADF38E /* main.m */; };
 		86DE9BF219C9033C00ADF38E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 86DE9BF119C9033C00ADF38E /* AppDelegate.m */; };
 		86DE9BF519C9033C00ADF38E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86DE9BF419C9033C00ADF38E /* ViewController.m */; };
@@ -57,6 +58,7 @@
 		86C1E5F019D1E58C00096A8C /* TPDWazeMapsApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDWazeMapsApp.m; sourceTree = "<group>"; };
 		86C1E5F919D1EA0800096A8C /* TPDURLUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDURLUtilities.m; sourceTree = "<group>"; };
 		86C1E5FB19D1EA3700096A8C /* TPDURLUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPDURLUtilities.h; sourceTree = "<group>"; };
+		86C1E5FC19D1FDDE00096A8C /* TPDURLUtilitiesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDURLUtilitiesTests.m; sourceTree = "<group>"; };
 		86DE9BE919C9033C00ADF38E /* TPDMapsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TPDMapsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86DE9BED19C9033C00ADF38E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86DE9BEE19C9033C00ADF38E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = main.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
@@ -163,6 +165,7 @@
 		86DE9C0519C9033D00ADF38E /* TPDMapsAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				86C1E5FC19D1FDDE00096A8C /* TPDURLUtilitiesTests.m */,
 				86DE9C0819C9033D00ADF38E /* TPDMapsAppTests.m */,
 				86DE9C0619C9033D00ADF38E /* Supporting Files */,
 			);
@@ -298,6 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86DE9C0919C9033D00ADF38E /* TPDMapsAppTests.m in Sources */,
+				86C1E5FD19D1FDDE00096A8C /* TPDURLUtilitiesTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
