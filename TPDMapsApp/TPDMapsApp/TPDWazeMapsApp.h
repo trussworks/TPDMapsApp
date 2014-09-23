@@ -8,6 +8,10 @@
 
 #import "TPDMapsApp.h"
 
+/**
+ The TPDMapsApp representing the Waze application.
+ */
+
 @interface TPDWazeMapsApp : TPDMapsApp
 
 @end

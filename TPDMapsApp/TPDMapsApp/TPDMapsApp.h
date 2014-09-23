@@ -7,6 +7,9 @@
 
 @import Foundation;
 
+/**
+ The mode of travel requested.
+ */
 NS_ENUM(NSInteger, TPDMapsAppTravelMode) {
     TPDMapsAppTravelModeNone = 0,
     TPDMapsAppTravelModeDriving = 1,
@@ -15,6 +18,9 @@ NS_ENUM(NSInteger, TPDMapsAppTravelMode) {
     TPDMapsAppTravelModeTransit = 4
 };
 
+/**
+ Instances of TPDMapsApp represent the various Maps applications available on iOS.
+ */
 @interface TPDMapsApp : NSObject
 
 /**
@@ -43,13 +49,21 @@ NS_ENUM(NSInteger, TPDMapsAppTravelMode) {
 + (NSArray *)installedMapsApps;
 
 /**
+ 
+ @param identifier The identifier string associated with a given TPDMapsApp.
+ 
  @return A TPDMapsApp for an identifier previously obtained from the identifier property. Useful for opening a map application that the customer has selected previously that you've stashed in `NSUserDefaults`.
  */
 + (TPDMapsApp *)mapsAppWithIdentifier:(NSString *)identifier;
 
+/**
+ Is the app associated with this TPDMapsApp object installed on the device?
+ */
 - (BOOL)isInstalled;
 
 /**
+ @param mapsApp The object to test equality against.
+ 
  @return YES if the TPDMapsApp objects refer to the same maps app, even if they are different objects.
  */
 - (BOOL)isEqualToMapsApp:(TPDMapsApp *)mapsApp;
@@ -76,8 +90,14 @@ NS_ENUM(NSInteger, TPDMapsAppTravelMode) {
                        destination:(NSString *)destination
                         travelMode:(enum TPDMapsAppTravelMode)travelMode;
 
+/**
+ Open the maps application with stuff.
+ */
 - (BOOL)openMapsAppWithBaseURLString:(NSString *)baseURLString params:(NSDictionary *)params;
 
+/** 
+ Make a URL from params.
+ */
 - (NSURL *)mapsAppURLWithBaseURLString:(NSString *)baseURLString params:(NSDictionary *)params;
 
 @end

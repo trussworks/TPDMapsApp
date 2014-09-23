@@ -7,7 +7,9 @@
 //
 
 #import "TPDMapsApp.h"
-
+/**
+ The TPDMapsApp representing the MapsQuest maps application.
+ */
 @interface TPDMapQuestMapsApp : TPDMapsApp
 
 @end

@@ -21,4 +21,4 @@ inpath appledoc && appledoc \
     --no-warn-invalid-crossref \
     --ignore "*.m" \
     --index-desc "README.md" \
-    TPDMapsApp/TPDMapsApp.h
+    TPDMapsApp/TPDMapsApp/*.h

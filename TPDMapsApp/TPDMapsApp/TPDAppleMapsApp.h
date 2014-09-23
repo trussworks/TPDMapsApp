@@ -7,6 +7,9 @@
 
 #import "TPDMapsApp.h"
 
+/**
+ The TPDMapsApp representing the Apple Maps application.
+ */
 @interface TPDAppleMapsApp : TPDMapsApp
 
 @end

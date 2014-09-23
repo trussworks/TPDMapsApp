@@ -7,6 +7,10 @@
 
 #import "TPDMapsApp.h"
 
+/**
+ The TPDMapsApp representing the Google Maps application.
+ */
+
 @interface TPDGoogleMapsApp : TPDMapsApp
 
 @end

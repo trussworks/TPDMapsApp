@@ -8,6 +8,10 @@
 
 #import "TPDMapsApp.h"
 
+/**
+ The TPDMapsApp representing the MotionX GPS application.
+ */
+
 @interface TPDMotionXGPSMapsApp : TPDMapsApp
 
 @end

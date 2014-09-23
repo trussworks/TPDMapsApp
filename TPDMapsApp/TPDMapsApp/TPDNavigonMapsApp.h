@@ -8,6 +8,10 @@
 
 #import "TPDMapsApp.h"
 
+/**
+ The TPDMapsApp representing the Navigon application.
+ */
+
 @interface TPDNavigonMapsApp : TPDMapsApp
 
 @end
