@@ -11,6 +11,7 @@
 @import UIKit;
 
 #import "TPDGoogleMapsApp.h"
+#import "TPDURLUtilities.h"
 
 static NSString *const mapsBaseURLString = @"comgooglemaps://";
 
@@ -32,7 +33,7 @@ static NSString *const mapsBaseURLString = @"comgooglemaps://";
     NSDictionary *params = @{
                              @"q" : query
                              };
-    return [self openMapsAppWithBaseURLString:mapsBaseURLString params:params];
+    return OpenNSURLWithBaseURLStringAndParams(mapsBaseURLString, params);
 }
 
 - (BOOL)openForDirectionsWithStart:(NSString *)start
@@ -65,7 +66,7 @@ static NSString *const mapsBaseURLString = @"comgooglemaps://";
                              @"daddr" : destination,
                              @"directionsmode" : directionsMode
                              };
-    return [self openMapsAppWithBaseURLString:mapsBaseURLString params:params];
+    return OpenNSURLWithBaseURLStringAndParams(mapsBaseURLString, params);
 }
 
 @end

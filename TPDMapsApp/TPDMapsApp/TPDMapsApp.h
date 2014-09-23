@@ -90,14 +90,4 @@ NS_ENUM(NSInteger, TPDMapsAppTravelMode) {
                        destination:(NSString *)destination
                         travelMode:(enum TPDMapsAppTravelMode)travelMode;
 
-/**
- Open the maps application with stuff.
- */
-- (BOOL)openMapsAppWithBaseURLString:(NSString *)baseURLString params:(NSDictionary *)params;
-
-/** 
- Make a URL from params.
- */
-- (NSURL *)mapsAppURLWithBaseURLString:(NSString *)baseURLString params:(NSDictionary *)params;
-
 @end

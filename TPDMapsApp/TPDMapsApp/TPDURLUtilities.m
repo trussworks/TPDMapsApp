@@ -6,8 +6,15 @@
 //  Copyright © 2014 Tetherpad. All rights reserved.
 //
 
+@import UIKit;
+
 #import "TPDURLUtilities.h"
 #import "TPDURLQueryItem.h"
+
+BOOL OpenNSURLWithBaseURLStringAndParams(NSString *baseURLString, NSDictionary *params) {
+    NSURL *url = NSURLWithBaseURLStringAndParams(baseURLString, params);
+    return [[UIApplication sharedApplication] openURL:url];
+}
 
 NSURL *NSURLWithBaseURLStringAndParams(NSString *baseURLString, NSDictionary *params) {
     NSMutableArray *queryItems = [NSMutableArray array];

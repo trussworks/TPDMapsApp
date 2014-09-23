@@ -8,4 +8,6 @@
 
 @import Foundation;
 
+BOOL OpenNSURLWithBaseURLStringAndParams(NSString *baseURLString, NSDictionary *params);
 NSURL *NSURLWithBaseURLStringAndParams(NSString *baseURLString, NSDictionary *params);
+

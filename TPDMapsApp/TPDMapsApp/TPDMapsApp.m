@@ -114,28 +114,4 @@
                                  userInfo:nil];
 }
 
-- (BOOL)openMapsAppWithBaseURLString:(NSString *)baseURLString params:(NSDictionary *)params {
-    NSURL *mapsAppURL = [self mapsAppURLWithBaseURLString:baseURLString params:params];
-    return [[UIApplication sharedApplication] openURL:mapsAppURL];
-}
-
-- (NSURL *)mapsAppURLWithBaseURLString:(NSString *)baseURLString params:(NSDictionary *)params {
-    NSMutableArray *queryItems = [NSMutableArray array];
-    NSURLComponents *mapURLComponent = [NSURLComponents componentsWithString:baseURLString];
-    if ([NSURLQueryItem class]) {
-        for (NSString *key in params) {
-            NSURLQueryItem *item = [NSURLQueryItem queryItemWithName:key value:[params objectForKey:key]];
-            [queryItems addObject:item];
-        }
-        mapURLComponent.queryItems = queryItems;
-    } else {
-        for (NSString *key in params) {
-            TPDURLQueryItem *item = [TPDURLQueryItem queryItemWithName:key value:[params objectForKey:key]];
-            [queryItems addObject:item];
-        }
-        mapURLComponent.query = URLQueryStringFromTPDURLQueryItems(queryItems);
-    }
-    return mapURLComponent.URL;
-}
-
 @end

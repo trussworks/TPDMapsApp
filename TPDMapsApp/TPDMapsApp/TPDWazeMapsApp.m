@@ -12,6 +12,7 @@
 @import UIKit;
 
 #import "TPDWazeMapsApp.h"
+#import "TPDURLUtilities.h"
 
 static NSString *const mapsBaseURLString = @"waze://";
 
@@ -33,7 +34,7 @@ static NSString *const mapsBaseURLString = @"waze://";
     NSDictionary *params = @{
                              @"q" : query
                              };
-    return [self openMapsAppWithBaseURLString:mapsBaseURLString params:params];
+    return OpenNSURLWithBaseURLStringAndParams(mapsBaseURLString, params);
 }
 
 - (BOOL)openForDirectionsWithStart:(NSString *)start
@@ -43,7 +44,7 @@ static NSString *const mapsBaseURLString = @"waze://";
                              @"q" : destination,
                              @"navigate" : @"yes"
                              };
-    return [self openMapsAppWithBaseURLString:mapsBaseURLString params:params];
+    return OpenNSURLWithBaseURLStringAndParams(mapsBaseURLString, params);
 }
 
 @end

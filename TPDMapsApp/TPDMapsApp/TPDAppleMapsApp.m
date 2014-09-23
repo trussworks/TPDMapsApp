@@ -10,6 +10,7 @@
 
 @import UIKit;
 #import "TPDAppleMapsApp.h"
+#import "TPDURLUtilities.h"
 
 static NSString *const mapsBaseURLString = @"http://maps.apple.com/";
 
@@ -31,7 +32,7 @@ static NSString *const mapsBaseURLString = @"http://maps.apple.com/";
     NSDictionary *params = @{
                              @"q" : query
                              };
-    return [self openMapsAppWithBaseURLString:mapsBaseURLString params:params];
+    return OpenNSURLWithBaseURLStringAndParams(mapsBaseURLString, params);
 }
 
 - (BOOL)openForDirectionsWithStart:(NSString *)start
@@ -41,7 +42,7 @@ static NSString *const mapsBaseURLString = @"http://maps.apple.com/";
                              @"saddr" : start,
                              @"daddr" : destination
                              };
-    return [self openMapsAppWithBaseURLString:mapsBaseURLString params:params];
+    return OpenNSURLWithBaseURLStringAndParams(mapsBaseURLString, params);
 }
 
 @end
