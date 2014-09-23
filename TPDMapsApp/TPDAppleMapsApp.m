@@ -8,7 +8,7 @@
 // Apple Maps URL documentation:
 // http://developer.apple.com/library/ios/#featuredarticles/iPhoneURLScheme_Reference/Articles/MapLinks.html
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 #import "TPDAppleMapsApp.h"
 
 static NSString *const mapsBaseURLString = @"http://maps.apple.com/";

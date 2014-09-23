@@ -6,7 +6,7 @@
 //  Copyright © 2014 Tetherpad. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 @interface ViewController : UIViewController
 

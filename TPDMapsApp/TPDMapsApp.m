@@ -5,9 +5,8 @@
 //  Copyright © 2013 Tetherpad, Inc. All rights reserved.
 //
 
-// #import <AFNetworking/AFNetworking.h>
-#import <UIKit/UIKit.h>
-#import <dispatch/dispatch.h>
+@import UIKit;
+@import Dispatch;
 
 #import "TPDMapsApp.h"
 #import "TPDAppleMapsApp.h"

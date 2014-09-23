@@ -8,7 +8,8 @@
 // Google Maps URL documentation:
 // https://developers.google.com/maps/documentation/ios/urlscheme
 
-#import <UIKit/UIKit.h>
+@import UIKit;
+
 #import "TPDGoogleMapsApp.h"
 
 static NSString *const mapsBaseURLString = @"comgooglemaps://";

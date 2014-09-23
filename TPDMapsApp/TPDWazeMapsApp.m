@@ -9,7 +9,8 @@
 // Waze URL documentation:
 // http://www.waze.com/dev/documentation/
 
-#import <UIKit/UIKit.h>
+@import UIKit;
+
 #import "TPDWazeMapsApp.h"
 
 static NSString *const mapsBaseURLString = @"waze://";

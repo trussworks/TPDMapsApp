@@ -5,8 +5,6 @@
 //  Copyright © 2013 Tetherpad. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
 #import "TPDMapsApp.h"
 
 @interface TPDAppleMapsApp : TPDMapsApp

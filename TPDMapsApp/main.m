@@ -6,7 +6,8 @@
 //  Copyright © 2014 Tetherpad. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
+
 #import "AppDelegate.h"
 
 int main(int argc, char * argv[]) {

@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Tetherpad. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 NSString *URLQueryStringFromTPDURLQueryItems(NSArray *queryItems);
 

@@ -5,10 +5,9 @@
 //  Copyright © 2013 Tetherpad, Inc. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
-
-NS_ENUM(NSUInteger, TPDMapsAppTravelMode) {
+NS_ENUM(NSInteger, TPDMapsAppTravelMode) {
     TPDMapsAppTravelModeNone = 0,
     TPDMapsAppTravelModeDriving = 1,
     TPDMapsAppTravelModeWalking = 2,
