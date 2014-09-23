@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		861FE3DA19CBA1BE00839E53 /* ArrayUITableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 861FE3D919CBA1BE00839E53 /* ArrayUITableViewDataSource.m */; };
 		8623CA5E19C9041300A1B962 /* TPDAppleMapsApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 8623CA5119C9041300A1B962 /* TPDAppleMapsApp.m */; };
 		8623CA5F19C9041300A1B962 /* TPDGoogleMapsApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 8623CA5319C9041300A1B962 /* TPDGoogleMapsApp.m */; };
 		8623CA6019C9041300A1B962 /* TPDMapQuestMapsApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 8623CA5519C9041300A1B962 /* TPDMapQuestMapsApp.m */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		861FE3D819CBA1BE00839E53 /* ArrayUITableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrayUITableViewDataSource.h; sourceTree = "<group>"; };
+		861FE3D919CBA1BE00839E53 /* ArrayUITableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrayUITableViewDataSource.m; sourceTree = "<group>"; };
 		8623CA5019C9041300A1B962 /* TPDAppleMapsApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPDAppleMapsApp.h; sourceTree = "<group>"; };
 		8623CA5119C9041300A1B962 /* TPDAppleMapsApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPDAppleMapsApp.m; sourceTree = "<group>"; };
 		8623CA5219C9041300A1B962 /* TPDGoogleMapsApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = TPDGoogleMapsApp.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -126,6 +129,8 @@
 				86DE9BF319C9033C00ADF38E /* ViewController.h */,
 				86DE9BF419C9033C00ADF38E /* ViewController.m */,
 				86DE9BF619C9033C00ADF38E /* Main.storyboard */,
+				861FE3D819CBA1BE00839E53 /* ArrayUITableViewDataSource.h */,
+				861FE3D919CBA1BE00839E53 /* ArrayUITableViewDataSource.m */,
 				86DE9BF919C9033C00ADF38E /* Images.xcassets */,
 				86DE9BFB19C9033C00ADF38E /* LaunchScreen.xib */,
 				86DE9BEC19C9033C00ADF38E /* Supporting Files */,
@@ -261,6 +266,7 @@
 			files = (
 				8623CA5E19C9041300A1B962 /* TPDAppleMapsApp.m in Sources */,
 				8623CA6019C9041300A1B962 /* TPDMapQuestMapsApp.m in Sources */,
+				861FE3DA19CBA1BE00839E53 /* ArrayUITableViewDataSource.m in Sources */,
 				86DE9BF519C9033C00ADF38E /* ViewController.m in Sources */,
 				8623CA6219C9041300A1B962 /* TPDMotionXGPSMapsApp.m in Sources */,
 				8623CA6419C9041300A1B962 /* TPDWazeMapsApp.m in Sources */,
