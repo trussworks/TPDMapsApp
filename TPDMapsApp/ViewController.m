@@ -21,7 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.availableMapsApps = [TPDMapsApp availableMapsApps];
+    self.availableMapsApps = [TPDMapsApp availableMapsAppsSortedByName];
     self.dataSource = [[ArrayUITableViewDataSource alloc] initWithArray:self.availableMapsApps
                                                          cellIdentifier:@"BasicCell"
                                                      configureCellBlock:^(UITableViewCell *cell, id item) {

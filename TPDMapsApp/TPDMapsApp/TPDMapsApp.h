@@ -44,6 +44,11 @@ NS_ENUM(NSInteger, TPDMapsAppTravelMode) {
 + (NSArray *)availableMapsApps;
 
 /**
+ @return An array of `TPDMapsApp` objects sorted by display name for use in a settings display.
+ */
++ (NSArray *)availableMapsAppsSortedByName;
+
+/**
  @return An array of `TPDMapsApp' objects for maps applications that are installed.
  */
 + (NSArray *)installedMapsApps;

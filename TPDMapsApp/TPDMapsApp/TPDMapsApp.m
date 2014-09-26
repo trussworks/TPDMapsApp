@@ -34,6 +34,14 @@
     return mapsApps;
 }
 
++ (NSArray *)availableMapsAppsSortedByName {
+    return [[[self class] availableMapsApps] sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        TPDMapsApp *app1 = obj1;
+        TPDMapsApp *app2 = obj2;
+        return [app1.name compare:app2.name];
+    }];
+}
+
 + (NSArray *)installedMapsApps {
     NSArray *mapsApps = [self availableMapsApps];
     NSIndexSet *installedApps = [mapsApps indexesOfObjectsPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
