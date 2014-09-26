@@ -12,7 +12,9 @@ allow the customer to select their own.
                    DESC
   s.homepage     = "https://github.com/tetherpad/TPDMapsApp"
   s.license      = 'MIT'
-  s.author       = { "Mark Ferlatte" => "mark@tetherpad.com" }
+  s.author       = {
+    "Mark Ferlatte" => "mark@tetherpad.com"
+  }
   s.source       = { 
     :git => "https://github.com/tetherpad/TPDMapsApp.git", 
     :tag => s.version.to_s
