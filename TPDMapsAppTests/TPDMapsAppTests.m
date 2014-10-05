@@ -29,12 +29,16 @@
 
 - (void)testNumberOfInstalledMapsApps {
     NSArray *installedApps = [TPDMapsApp installedMapsApps];
-    XCTAssertEqual([installedApps count], 1UL);
+    XCTAssertEqual([installedApps count],
+                   1UL,
+                   @"there MUST be 1 installed Maps app");
 }
 
 - (void)testNumberOfAvailableMapsApps {
     NSArray *availableApps = [TPDMapsApp availableMapsApps];
-    XCTAssertEqual([availableApps count], 3UL);
+    XCTAssertEqual([availableApps count],
+                   3UL,
+                   @"there MUST be 3 available Maps apps");
 }
 
 @end

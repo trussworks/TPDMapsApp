@@ -18,19 +18,30 @@ BOOL OpenNSURLWithBaseURLStringAndParams(NSString *baseURLString, NSDictionary *
 
 NSURL *NSURLWithBaseURLStringAndParams(NSString *baseURLString, NSDictionary *params) {
     NSMutableArray *queryItems = [NSMutableArray array];
+    NSArray *sortedQueryItems;
     NSURLComponents *mapURLComponent = [NSURLComponents componentsWithString:baseURLString];
     if ([NSURLQueryItem class]) {
         for (NSString *key in params) {
             NSURLQueryItem *item = [NSURLQueryItem queryItemWithName:key value:[params objectForKey:key]];
             [queryItems addObject:item];
         }
-        mapURLComponent.queryItems = queryItems;
+        sortedQueryItems = [queryItems sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+            NSURLQueryItem *item1 = obj1;
+            NSURLQueryItem *item2 = obj2;
+            return [item1.name compare:item2.name];
+        }];
+        mapURLComponent.queryItems = sortedQueryItems;
     } else {
         for (NSString *key in params) {
             TPDURLQueryItem *item = [TPDURLQueryItem queryItemWithName:key value:[params objectForKey:key]];
             [queryItems addObject:item];
         }
-        mapURLComponent.query = URLQueryStringFromTPDURLQueryItems(queryItems);
+        sortedQueryItems = [queryItems sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+            TPDURLQueryItem *item1 = obj1;
+            TPDURLQueryItem *item2 = obj2;
+            return [item1.name compare:item2.name];
+        }];
+        mapURLComponent.query = URLQueryStringFromTPDURLQueryItems(sortedQueryItems);
     }
     return mapURLComponent.URL;
 }

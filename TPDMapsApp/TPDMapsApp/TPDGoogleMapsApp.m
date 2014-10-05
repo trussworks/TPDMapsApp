@@ -41,6 +41,9 @@ static NSString *const mapsBaseURLString = @"comgooglemaps://";
                         travelMode:(enum TPDMapsAppTravelMode)travelMode {
     NSString *directionsMode = nil;
     switch (travelMode) {
+        case TPDMapsAppTravelModeNone:
+            return NO;
+
         case TPDMapsAppTravelModeDriving:
             directionsMode = @"driving";
             break;
@@ -55,10 +58,6 @@ static NSString *const mapsBaseURLString = @"comgooglemaps://";
             
         case TPDMapsAppTravelModeBicycling:
             directionsMode = @"walking"; // Hopefully we'll get bicycling directions in the future
-            break;
-            
-        default:
-            directionsMode = @"driving"; // Sigh. It's sad that the default must be driving.
             break;
     }
     NSDictionary *params = @{

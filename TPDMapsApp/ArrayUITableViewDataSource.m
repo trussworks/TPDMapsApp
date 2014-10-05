@@ -19,7 +19,8 @@
 @implementation ArrayUITableViewDataSource
 
 - (instancetype)initWithArray:(NSArray *)anArray cellIdentifier:(NSString *)aCellIdentifier configureCellBlock:(TableViewCellConfigureBlock)aConfigureCellBlock {
-    if (self = [super init]) {
+    self = [super init];
+    if (self) {
         _array = anArray;
         _cellIdentifier = aCellIdentifier;
         _configureCellBlock = aConfigureCellBlock;

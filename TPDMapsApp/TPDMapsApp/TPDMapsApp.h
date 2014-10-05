@@ -10,6 +10,7 @@
 /**
  The mode of travel requested.
  */
+FOUNDATION_EXPORT NSInteger TPDMapsAppTravelMode;
 NS_ENUM(NSInteger, TPDMapsAppTravelMode) {
     TPDMapsAppTravelModeNone = 0,
     TPDMapsAppTravelModeDriving = 1,

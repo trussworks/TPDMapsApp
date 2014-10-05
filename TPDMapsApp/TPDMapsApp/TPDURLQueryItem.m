@@ -39,7 +39,8 @@ NSString *URLQueryStringFromTPDURLQueryItems(NSArray *queryItems) {
 
 - (instancetype)initWithName:(NSString *)name
                        value:(NSString *)value {
-    if (self = [super init]) {
+    self = [super init];
+    if (self) {
         _name = name;
         _value = value;
     }

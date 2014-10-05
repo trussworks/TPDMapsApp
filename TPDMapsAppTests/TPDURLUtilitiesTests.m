@@ -36,7 +36,9 @@
     urlComponents.queryItems = @[queryItem];
 
     NSURL *urlToBeTested = NSURLWithBaseURLStringAndParams(baseURL, @{ queryName: queryValue });
-    XCTAssertEqualObjects(urlToBeTested, urlComponents.URL);
+    XCTAssertEqualObjects(urlToBeTested,
+                          urlComponents.URL,
+                          @"NSURLWithBaseURLStringAndParams MUST make a complex URL correctly");
 }
 
 - (void)testMakesURLCorrectlyWithMultipleParams {
@@ -49,9 +51,15 @@
     NSURLQueryItem *queryItem2 = [NSURLQueryItem queryItemWithName:queryName2 value:queryValue2];
 
     NSURLComponents *urlComponents = [NSURLComponents componentsWithString:baseURL];
-    urlComponents.queryItems = @[queryItem2, queryItem];
+    urlComponents.queryItems = [@[queryItem2, queryItem] sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        NSURLQueryItem *item1 = obj1;
+        NSURLQueryItem *item2 = obj2;
+        return [item1.name compare:item2.name];
+    }];
 
     NSURL *urlToBeTested = NSURLWithBaseURLStringAndParams(baseURL, @{ queryName: queryValue, queryName2: queryValue2 });
-    XCTAssertEqualObjects(urlToBeTested, urlComponents.URL);
+    XCTAssertEqualObjects(urlToBeTested,
+                          urlComponents.URL,
+                          @"NSURLWithBaseURLStringAndParams MUST make a URL with multiple params correctly");
 }
 @end
