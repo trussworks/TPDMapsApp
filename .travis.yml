@@ -1,0 +1,7 @@
+language: objective-c
+xcode_project: TPDMapsApp.xcodeproj
+xcode_scheme: TPDMapsApp
+xcode_sdk: iphonesimulator8.0
+env:
+  global:
+    - LC_ALL="en_US.UTF-8"
