@@ -2,6 +2,10 @@
 
 An interface to external mapping applications on iOS.
 
+## Build Status
+
+[![Build Status](https://travis-ci.org/tetherpad/TPDMapsApp.svg)](https://travis-ci.org/tetherpad/TPDMapsApp)
+
 ## Usage
 
     #import <TPDMapsApp/TPDMapsApp.h>
