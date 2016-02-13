@@ -33,7 +33,7 @@ An interface to external mapping applications on iOS.
     
 ## Installation
 
-Use Cocoapods.
+Use CocoaPods.
 
     $ edit Podfile
     pod 'TPDMapsApp', '~> 1.0.0'
