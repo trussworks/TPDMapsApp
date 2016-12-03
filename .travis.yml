@@ -1,4 +1,5 @@
 language: objective-c
+osx_image: xcode8.1
 xcode_project: TPDMapsApp.xcodeproj
 xcode_scheme: TPDMapsApp
 xcode_sdk: iphonesimulator8.0
