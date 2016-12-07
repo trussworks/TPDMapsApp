@@ -410,6 +410,7 @@
 					"-Wno-gnu-statement-expression",
 					"-Wno-auto-import",
 					"-Wno-reserved-id-macro",
+					"-Wno-partial-availability",
 				);
 			};
 			name = Debug;
@@ -482,6 +483,7 @@
 					"-Wno-gnu-statement-expression",
 					"-Wno-auto-import",
 					"-Wno-reserved-id-macro",
+					"-Wno-partial-availability",
 				);
 			};
 			name = Release;
