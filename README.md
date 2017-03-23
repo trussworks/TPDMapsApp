@@ -4,7 +4,7 @@ An interface to external mapping applications on iOS.
 
 ## Build Status
 
-[![Build Status](https://travis-ci.org/trussworks/TPDMapsApp.svg)](https://travis-ci.org/trussworks/TPDMapsApp)
+[![CircleCI](https://circleci.com/gh/trussworks/TPDMapsApp.svg?style=svg)](https://circleci.com/gh/trussworks/TPDMapsApp)
 
 ## Usage
 

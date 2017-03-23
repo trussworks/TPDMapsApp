@@ -1,8 +1,0 @@
-language: objective-c
-osx_image: xcode8.1
-xcode_project: TPDMapsApp.xcodeproj
-xcode_scheme: TPDMapsApp
-script: "./bin/travis-script"
-env:
-  global:
-    - LC_ALL="en_US.UTF-8"
