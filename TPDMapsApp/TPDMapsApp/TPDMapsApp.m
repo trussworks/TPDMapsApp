@@ -89,16 +89,17 @@
                                  userInfo:nil];
 }
 
-- (BOOL)isInstalled {
+- (NSURL *)baseURL {
     @throw [NSException exceptionWithName:NSInternalInconsistencyException
                                    reason:[NSString stringWithFormat:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)]
                                  userInfo:nil];
 }
+- (BOOL)isInstalled {
+    return [[UIApplication sharedApplication] canOpenURL:[self baseURL]];
+}
 
 - (NSString *)identifier {
-    @throw [NSException exceptionWithName:NSInternalInconsistencyException
-                                   reason:[NSString stringWithFormat:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)]
-                                 userInfo:nil];
+    return [[self baseURL] absoluteString];
 }
 
 - (BOOL)isEqualToMapsApp:(TPDMapsApp *)mapsApp {

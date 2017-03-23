@@ -22,13 +22,8 @@ static NSString *const mapsBaseURLString = @"waze://";
     return @"Waze";
 }
 
-- (BOOL)isInstalled {
-    NSURL *mapsBaseURL = [NSURL URLWithString:mapsBaseURLString];
-    return [[UIApplication sharedApplication] canOpenURL:mapsBaseURL];
-}
-
-- (NSString *)identifier {
-    return mapsBaseURLString;
+- (NSURL *)baseURL {
+    return [NSURL URLWithString:mapsBaseURLString];
 }
 
 - (BOOL)openWithQuery:(NSString *)query {
