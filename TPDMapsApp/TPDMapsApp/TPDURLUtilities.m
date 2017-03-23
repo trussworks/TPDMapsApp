@@ -9,7 +9,6 @@
 @import UIKit;
 
 #import "TPDURLUtilities.h"
-#import "TPDURLQueryItem.h"
 
 BOOL OpenNSURLWithBaseURLStringAndParams(NSString *baseURLString, NSDictionary *params) {
     NSURL *url = NSURLWithBaseURLStringAndParams(baseURLString, params);
@@ -20,28 +19,15 @@ NSURL *NSURLWithBaseURLStringAndParams(NSString *baseURLString, NSDictionary *pa
     NSMutableArray *queryItems = [NSMutableArray array];
     NSArray *sortedQueryItems;
     NSURLComponents *mapURLComponent = [NSURLComponents componentsWithString:baseURLString];
-    if ([NSURLQueryItem class]) {
-        for (NSString *key in params) {
-            NSURLQueryItem *item = [NSURLQueryItem queryItemWithName:key value:[params objectForKey:key]];
-            [queryItems addObject:item];
-        }
-        sortedQueryItems = [queryItems sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
-            NSURLQueryItem *item1 = obj1;
-            NSURLQueryItem *item2 = obj2;
-            return [item1.name compare:item2.name];
-        }];
-        mapURLComponent.queryItems = sortedQueryItems;
-    } else {
-        for (NSString *key in params) {
-            TPDURLQueryItem *item = [TPDURLQueryItem queryItemWithName:key value:[params objectForKey:key]];
-            [queryItems addObject:item];
-        }
-        sortedQueryItems = [queryItems sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
-            TPDURLQueryItem *item1 = obj1;
-            TPDURLQueryItem *item2 = obj2;
-            return [item1.name compare:item2.name];
-        }];
-        mapURLComponent.query = URLQueryStringFromTPDURLQueryItems(sortedQueryItems);
+    for (NSString *key in params) {
+        NSURLQueryItem *item = [NSURLQueryItem queryItemWithName:key value:[params objectForKey:key]];
+        [queryItems addObject:item];
     }
+    sortedQueryItems = [queryItems sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        NSURLQueryItem *item1 = obj1;
+        NSURLQueryItem *item2 = obj2;
+        return [item1.name compare:item2.name];
+    }];
+    mapURLComponent.queryItems = sortedQueryItems;
     return mapURLComponent.URL;
 }
