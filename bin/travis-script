@@ -1,9 +1,0 @@
-#! /bin/bash
-
-set -eu -o pipefail
-
-xcodebuild -project TPDMapsApp.xcodeproj \
-           -scheme TPDMapsApp \
-           -sdk iphonesimulator \
-           -destination 'platform=iOS Simulator,name=iPhone 7' \
-           test | bundle exec xcpretty
