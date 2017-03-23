@@ -95,4 +95,11 @@ typedef NS_ENUM(NSInteger, TPDMapsAppTravelMode) {
                        destination:(NSString *)destination
                         travelMode:(enum TPDMapsAppTravelMode)travelMode;
 
+/**
+ The base URL for the map application.
+ 
+ @return an NSURL of the base URL for the map application (ex https://maps.apple.com ). Used to construct location queries.
+ */
+- (NSURL *)baseURL;
+
 @end
