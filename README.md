@@ -42,6 +42,14 @@ Use CocoaPods.
 
     $ open App.xcworkspace
 
+Then you will need to update your application's `Info.plist` with the following:
+
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>comgooglemaps</string>
+        <string>waze</string>
+    </array>
+
 ## License
 
 TPDMapsApp is available under the MIT license. See the LICENSE file for more info.
