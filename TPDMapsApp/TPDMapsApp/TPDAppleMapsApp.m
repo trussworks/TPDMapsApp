@@ -6,7 +6,7 @@
 //
 
 // Apple Maps URL documentation:
-// http://developer.apple.com/library/ios/#featuredarticles/iPhoneURLScheme_Reference/Articles/MapLinks.html
+// https://developer.apple.com/library/content/featuredarticles/iPhoneURLScheme_Reference/MapLinks/MapLinks.html
 
 @import UIKit;
 #import "TPDAppleMapsApp.h"
@@ -29,6 +29,27 @@ static NSString *const mapsBaseURLString = @"http://maps.apple.com/";
     NSURLQueryItem *startQueryItem = [NSURLQueryItem queryItemWithName:@"saddr" value:start];
     NSURLQueryItem *destinationQueryItem = [NSURLQueryItem queryItemWithName:@"daddr" value:destination];
     NSMutableArray *queryItems = [NSMutableArray arrayWithObjects:startQueryItem, destinationQueryItem, nil];
+    NSString *dirflgMode = nil;
+    switch (travelMode) {
+        case TPDMapsAppTravelModeNone: // Alas, if we don't know, we should assume driving.
+        case TPDMapsAppTravelModeDriving:
+            dirflgMode = @"d";
+            break;
+            
+        case TPDMapsAppTravelModeWalking:
+            dirflgMode = @"w";
+            break;
+            
+        case TPDMapsAppTravelModeTransit:
+            dirflgMode = @"r";
+            break;
+            
+        case TPDMapsAppTravelModeBicycling:
+            dirflgMode = @"w"; // Hopefully we'll get bicycling directions in the future
+            break;
+    }
+    NSURLQueryItem *dirflgQueryItem = [NSURLQueryItem queryItemWithName:@"dirflg" value:dirflgMode];
+    [queryItems addObject:dirflgQueryItem];
     return queryItems;
  }
 
