@@ -54,4 +54,16 @@
     }];
 }
 
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+    TPDMapsApp *app = [self.availableMapsApps objectAtIndex:(NSUInteger) indexPath.row];
+    [app openForDirectionsWithStart:@"1333 Minna St, San Francisco, CA"
+                        destination:@"1 Stockton St, San Francisco, CA 94108"
+                         travelMode:TPDMapsAppTravelModeTransit
+                  completionHandler:^(BOOL success) {
+                      if (! success) {
+                          NSLog(@"Failed to open maps app for directions.");
+                      }
+                  }];
+}
+
 @end
