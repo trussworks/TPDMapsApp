@@ -12,7 +12,6 @@
 @import UIKit;
 
 #import "TPDWazeMapsApp.h"
-#import "TPDURLUtilities.h"
 
 static NSString *const mapsBaseURLString = @"waze://";
 
