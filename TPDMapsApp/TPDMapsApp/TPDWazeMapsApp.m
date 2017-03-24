@@ -35,15 +35,4 @@ static NSString *const mapsBaseURLString = @"waze://";
     return queryItems;
 }
 
-
-- (BOOL)openForDirectionsWithStart:(NSString *)start
-                       destination:(NSString *)destination
-                        travelMode:(enum TPDMapsAppTravelMode)travelMode {
-    NSDictionary *params = @{
-                             @"q" : destination,
-                             @"navigate" : @"yes"
-                             };
-    return OpenNSURLWithBaseURLStringAndParams(mapsBaseURLString, params);
-}
-
 @end
