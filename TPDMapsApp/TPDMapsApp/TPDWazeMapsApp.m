@@ -26,12 +26,15 @@ static NSString *const mapsBaseURLString = @"waze://";
     return [NSURL URLWithString:mapsBaseURLString];
 }
 
-- (BOOL)openWithQuery:(NSString *)query {
-    NSDictionary *params = @{
-                             @"q" : query
-                             };
-    return OpenNSURLWithBaseURLStringAndParams(mapsBaseURLString, params);
+- (NSArray<NSURLQueryItem *> *)queryItemsForDirectionsWithStart:(NSString *)start
+                                                    destination:(NSString *)destination
+                                                     travelMode:(enum TPDMapsAppTravelMode)travelMode {
+    NSURLQueryItem *destinationQueryItem = [NSURLQueryItem queryItemWithName:@"q" value:destination];
+    NSURLQueryItem *navigateQueryItem = [NSURLQueryItem queryItemWithName:@"navigate" value:@"yes"];
+    NSMutableArray *queryItems = [NSMutableArray arrayWithObjects:destinationQueryItem, navigateQueryItem, nil];
+    return queryItems;
 }
+
 
 - (BOOL)openForDirectionsWithStart:(NSString *)start
                        destination:(NSString *)destination

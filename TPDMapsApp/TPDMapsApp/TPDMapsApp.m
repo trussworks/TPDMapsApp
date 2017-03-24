@@ -94,10 +94,11 @@
                                  userInfo:nil];
 }
 
+// Apple Maps, Google Maps, and Waze all use the same query param for query
+// so we just have the implementation in the base class.
 - (NSArray<NSURLQueryItem *> *)queryItemsWithQuery:(NSString *)query {
-    @throw [NSException exceptionWithName:NSInternalInconsistencyException
-                                   reason:[NSString stringWithFormat:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)]
-                                 userInfo:nil];
+    NSURLQueryItem *queryItem = [NSURLQueryItem queryItemWithName:@"q" value:query];
+    return @[queryItem];
 }
 
 - (NSArray<NSURLQueryItem *> *)queryItemsForDirectionsWithStart:(NSString *)start

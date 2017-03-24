@@ -10,7 +10,6 @@
 
 @import UIKit;
 #import "TPDAppleMapsApp.h"
-#import "TPDURLUtilities.h"
 
 static NSString *const mapsBaseURLString = @"http://maps.apple.com/";
 
@@ -22,11 +21,6 @@ static NSString *const mapsBaseURLString = @"http://maps.apple.com/";
 
 - (NSURL *)baseURL {
     return [NSURL URLWithString:mapsBaseURLString];
-}
-
-- (NSArray<NSURLQueryItem *> *)queryItemsWithQuery:(NSString *)query {
-    NSURLQueryItem *queryItem = [NSURLQueryItem queryItemWithName:@"q" value:query];
-    return @[queryItem];
 }
 
 - (NSArray<NSURLQueryItem *> *)queryItemsForDirectionsWithStart:(NSString *)start

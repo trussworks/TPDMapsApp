@@ -11,7 +11,6 @@
 @import UIKit;
 
 #import "TPDGoogleMapsApp.h"
-#import "TPDURLUtilities.h"
 
 static NSString *const mapsBaseURLString = @"comgooglemaps://";
 
@@ -25,25 +24,19 @@ static NSString *const mapsBaseURLString = @"comgooglemaps://";
     return [NSURL URLWithString:mapsBaseURLString];
 }
 
-- (BOOL)openWithQuery:(NSString *)query {
-    NSDictionary *params = @{
-                             @"q" : query
-                             };
-    return OpenNSURLWithBaseURLStringAndParams(mapsBaseURLString, params);
-}
-
-- (BOOL)openForDirectionsWithStart:(NSString *)start
-                       destination:(NSString *)destination
-                        travelMode:(enum TPDMapsAppTravelMode)travelMode {
+- (NSArray<NSURLQueryItem *> *)queryItemsForDirectionsWithStart:(NSString *)start
+                                                    destination:(NSString *)destination
+                                                     travelMode:(enum TPDMapsAppTravelMode)travelMode {
+    NSURLQueryItem *startQueryItem = [NSURLQueryItem queryItemWithName:@"saddr" value:start];
+    NSURLQueryItem *destinationQueryItem = [NSURLQueryItem queryItemWithName:@"daddr" value:destination];
+    NSMutableArray *queryItems = [NSMutableArray arrayWithObjects:startQueryItem, destinationQueryItem, nil];
     NSString *directionsMode = nil;
     switch (travelMode) {
-        case TPDMapsAppTravelModeNone:
-            return NO;
-
+        case TPDMapsAppTravelModeNone: // Alas, if we don't know, we should assume driving.
         case TPDMapsAppTravelModeDriving:
             directionsMode = @"driving";
             break;
-        
+            
         case TPDMapsAppTravelModeWalking:
             directionsMode = @"walking";
             break;
@@ -56,12 +49,9 @@ static NSString *const mapsBaseURLString = @"comgooglemaps://";
             directionsMode = @"walking"; // Hopefully we'll get bicycling directions in the future
             break;
     }
-    NSDictionary *params = @{
-                             @"saddr" : start,
-                             @"daddr" : destination,
-                             @"directionsmode" : directionsMode
-                             };
-    return OpenNSURLWithBaseURLStringAndParams(mapsBaseURLString, params);
+    NSURLQueryItem *directionsmodeQueryItem = [NSURLQueryItem queryItemWithName:@"directionsmode" value:directionsMode];
+    [queryItems addObject:directionsmodeQueryItem];
+    return queryItems;
 }
 
 @end
