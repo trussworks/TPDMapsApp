@@ -80,7 +80,19 @@ typedef NS_ENUM(NSInteger, TPDMapsAppTravelMode) {
  
  @return YES if the maps app opened successfully, NO otherwise.
  */
-- (BOOL)openWithQuery:(NSString *)query;
+- (BOOL)openWithQuery:(NSString *)query DEPRECATED_ATTRIBUTE;
+
+/**
+ Open the maps application and pass it the map query.
+ 
+ @param query The query string to send to the maps app (like @"Cupertino" or @"37.77493,-122.419416").
+ @param completion The block to execute with the results. 
+    Provide a value for this parameter if you want to be informed of the success or failure of opening the URL. 
+    This block is executed asynchronously on your app's main thread. 
+    The block has no return value and takes the following parameter:
+        success A Boolean indicating whether the URL was opened successfully.
+ */
+- (void)openWithQuery:(NSString *)query completionHandler:(void (^)(BOOL success))completion;
 
 /**
  Open the maps application and request directions between two locations.
@@ -93,7 +105,24 @@ typedef NS_ENUM(NSInteger, TPDMapsAppTravelMode) {
  */
 - (BOOL)openForDirectionsWithStart:(NSString *)start
                        destination:(NSString *)destination
-                        travelMode:(enum TPDMapsAppTravelMode)travelMode;
+                        travelMode:(enum TPDMapsAppTravelMode)travelMode DEPRECATED_ATTRIBUTE;
+
+/**
+ Open the maps application and request directions between two locations.
+ 
+ @param start The query string representing the directions start location.
+ @param destination The query string representing the directions destination.
+ @param travelMode The preferred travel mode for the directions. Depending on the app used, some of these modes will not be available. If in doubt, use TPDMapsAppTravelModeDriving as a sane default.
+ @param completion The block to execute with the results.
+    Provide a value for this parameter if you want to be informed of the success or failure of opening the URL.
+    This block is executed asynchronously on your app's main thread.
+    The block has no return value and takes the following parameter:
+        success A Boolean indicating whether the URL was opened successfully.
+ */
+- (void)openForDirectionsWithStart:(NSString *)start
+                       destination:(NSString *)destination
+                        travelMode:(enum TPDMapsAppTravelMode)travelMode
+                 completionHandler:(void (^)(BOOL success))completion;
 
 /**
  The base URL for the map application.

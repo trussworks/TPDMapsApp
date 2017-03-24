@@ -47,7 +47,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     TPDMapsApp *app = [self.availableMapsApps objectAtIndex:(NSUInteger) indexPath.row];
-    [app openWithQuery:@"1 Stockton St, San Francisco, CA 94108"];
+    [app openWithQuery:@"1 Stockton St, San Francisco, CA 94108" completionHandler:^(BOOL success) {
+        if (! success) {
+            NSLog(@"Failed to open maps app");
+        }
+    }];
 }
 
 @end

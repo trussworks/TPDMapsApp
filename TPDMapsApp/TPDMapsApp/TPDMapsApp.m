@@ -129,11 +129,24 @@
     return [self openWithQueryItems:queryItems];
 }
 
+- (void)openWithQuery:(NSString *)query completionHandler:(void (^)(BOOL success))completion {
+    NSArray *queryItems = [self queryItemsWithQuery:query];
+    [self openWithQueryItems:queryItems completionHandler:completion];
+}
+
 - (BOOL)openForDirectionsWithStart:(NSString *)start
                        destination:(NSString *)destination
                         travelMode:(enum TPDMapsAppTravelMode)travelMode {
     NSArray *queryItems = [self queryItemsForDirectionsWithStart:start destination:destination travelMode:travelMode];
     return [self openWithQueryItems:queryItems];
+}
+
+- (void)openForDirectionsWithStart:(NSString *)start
+                       destination:(NSString *)destination
+                        travelMode:(enum TPDMapsAppTravelMode)travelMode
+                 completionHandler:(void (^)(BOOL success))completion {
+    NSArray *queryItems = [self queryItemsForDirectionsWithStart:start destination:destination travelMode:travelMode];
+    [self openWithQueryItems:queryItems completionHandler:completion];
 }
 
 - (BOOL)openWithQueryItems:(NSArray<NSURLQueryItem *> *)queryItems {
@@ -149,6 +162,28 @@
         return [[UIApplication sharedApplication] openURL:url];
     }
     return NO;
+}
+
+- (void)openWithQueryItems:(NSArray<NSURLQueryItem *> *)queryItems completionHandler:(void (^)(BOOL success))completion {
+    NSArray *sortedQueryItems = [queryItems sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        NSURLQueryItem *item1 = obj1;
+        NSURLQueryItem *item2 = obj2;
+        return [item1.name compare:item2.name];
+    }];
+    NSURLComponents *mapURLComponents = [NSURLComponents componentsWithURL:[self baseURL] resolvingAgainstBaseURL:NO];
+    mapURLComponents.queryItems = sortedQueryItems;
+    BOOL retval = NO;
+    if (mapURLComponents.URL) {
+        NSURL * _Nonnull url = (NSURL * _Nonnull)mapURLComponents.URL;
+        if ([UIApplication instancesRespondToSelector:@selector(openURL:options:completionHandler:)]) {
+            [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:completion];
+        } else {
+            retval = [[UIApplication sharedApplication] openURL:url];
+            completion(retval);
+        }
+    } else {
+        completion(retval);
+    }
 }
 
 @end
