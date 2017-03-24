@@ -50,6 +50,26 @@ Then you will need to update your application's `Info.plist` with the following:
         <string>waze</string>
     </array>
 
+## Release
+
+Make sure that TPDMapsApp.podspec has the right version set in `s.version`.
+
+Find the commit hash of the release via `git log`, then tag it with that version. For example:
+
+    git tag -a -s 1.1.2 $COMMIT_HASH
+    git push upstream 1.1.2
+
+Then, make sure the podspec is still right:
+
+    bundle exec pod spec lint
+
+Assuming it passes, publish the new spec:
+
+    # Verify that you have an active session.
+    bundle exec pod trunk me
+    # Push the new spec to Cocoapods.
+    bundle exec pod trunk push TPDMapsApp.podspec
+
 ## License
 
 TPDMapsApp is available under the MIT license. See the LICENSE file for more info.
