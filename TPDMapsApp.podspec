@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "TPDMapsApp"
-  s.version      = "1.1.1"
+  s.version      = "1.1.2"
   s.summary      = "A class to help deal with the variety of mapping apps on iOS."
   s.description  = <<-DESC
 TPDMapsApp helps you launch the right external mapping application.
@@ -22,5 +22,5 @@ allow the customer to select their own.
   s.source_files = 'TPDMapsApp/TPDMapsApp/*.{h,m}'
   s.requires_arc = true
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '8.4'
 end

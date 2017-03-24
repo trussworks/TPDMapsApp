@@ -12,7 +12,6 @@
 #import "TPDAppleMapsApp.h"
 #import "TPDGoogleMapsApp.h"
 #import "TPDWazeMapsApp.h"
-#import "TPDURLQueryItem.h"
 
 @implementation TPDMapsApp
 
@@ -89,16 +88,33 @@
                                  userInfo:nil];
 }
 
-- (BOOL)isInstalled {
+- (NSURL *)baseURL {
     @throw [NSException exceptionWithName:NSInternalInconsistencyException
                                    reason:[NSString stringWithFormat:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)]
                                  userInfo:nil];
 }
 
-- (NSString *)identifier {
+// Apple Maps, Google Maps, and Waze all use the same query param for query
+// so we just have the implementation in the base class.
+- (NSArray<NSURLQueryItem *> *)queryItemsWithQuery:(NSString *)query {
+    NSURLQueryItem *queryItem = [NSURLQueryItem queryItemWithName:@"q" value:query];
+    return @[queryItem];
+}
+
+- (NSArray<NSURLQueryItem *> *)queryItemsForDirectionsWithStart:(NSString *)start
+                                  destination:(NSString *)destination
+                                   travelMode:(enum TPDMapsAppTravelMode)travelMode {
     @throw [NSException exceptionWithName:NSInternalInconsistencyException
                                    reason:[NSString stringWithFormat:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)]
                                  userInfo:nil];
+}
+
+- (BOOL)isInstalled {
+    return [[UIApplication sharedApplication] canOpenURL:[self baseURL]];
+}
+
+- (NSString *)identifier {
+    return [[self baseURL] absoluteString];
 }
 
 - (BOOL)isEqualToMapsApp:(TPDMapsApp *)mapsApp {
@@ -109,17 +125,30 @@
 }
 
 - (BOOL)openWithQuery:(NSString *)query {
-    @throw [NSException exceptionWithName:NSInternalInconsistencyException
-                                   reason:[NSString stringWithFormat:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)]
-                                 userInfo:nil];
+    NSArray *queryItems = [self queryItemsWithQuery:query];
+    return [self openWithQueryItems:queryItems];
 }
 
 - (BOOL)openForDirectionsWithStart:(NSString *)start
                        destination:(NSString *)destination
                         travelMode:(enum TPDMapsAppTravelMode)travelMode {
-    @throw [NSException exceptionWithName:NSInternalInconsistencyException
-                                   reason:[NSString stringWithFormat:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)]
-                                 userInfo:nil];
+    NSArray *queryItems = [self queryItemsForDirectionsWithStart:start destination:destination travelMode:travelMode];
+    return [self openWithQueryItems:queryItems];
+}
+
+- (BOOL)openWithQueryItems:(NSArray<NSURLQueryItem *> *)queryItems {
+    NSArray *sortedQueryItems = [queryItems sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        NSURLQueryItem *item1 = obj1;
+        NSURLQueryItem *item2 = obj2;
+        return [item1.name compare:item2.name];
+    }];
+    NSURLComponents *mapURLComponents = [NSURLComponents componentsWithURL:[self baseURL] resolvingAgainstBaseURL:NO];
+    mapURLComponents.queryItems = sortedQueryItems;
+    if (mapURLComponents.URL) {
+        NSURL * _Nonnull url = (NSURL * _Nonnull)mapURLComponents.URL;
+        return [[UIApplication sharedApplication] openURL:url];
+    }
+    return NO;
 }
 
 @end

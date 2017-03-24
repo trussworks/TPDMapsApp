@@ -10,7 +10,6 @@
 
 @import UIKit;
 #import "TPDAppleMapsApp.h"
-#import "TPDURLUtilities.h"
 
 static NSString *const mapsBaseURLString = @"http://maps.apple.com/";
 
@@ -20,30 +19,17 @@ static NSString *const mapsBaseURLString = @"http://maps.apple.com/";
     return @"Apple";
 }
 
-- (BOOL)isInstalled {
-    NSURL *mapsBaseURL = [NSURL URLWithString:mapsBaseURLString];
-    return [[UIApplication sharedApplication] canOpenURL:mapsBaseURL];
+- (NSURL *)baseURL {
+    return [NSURL URLWithString:mapsBaseURLString];
 }
 
-- (NSString *)identifier {
-    return mapsBaseURLString;
-}
-
-- (BOOL)openWithQuery:(NSString *)query {
-    NSDictionary *params = @{
-                             @"q" : query
-                             };
-    return OpenNSURLWithBaseURLStringAndParams(mapsBaseURLString, params);
-}
-
-- (BOOL)openForDirectionsWithStart:(NSString *)start
-                       destination:(NSString *)destination
-                        travelMode:(enum TPDMapsAppTravelMode)travelMode {
-    NSDictionary *params = @{
-                             @"saddr" : start,
-                             @"daddr" : destination
-                             };
-    return OpenNSURLWithBaseURLStringAndParams(mapsBaseURLString, params);
-}
+- (NSArray<NSURLQueryItem *> *)queryItemsForDirectionsWithStart:(NSString *)start
+                                  destination:(NSString *)destination
+                                   travelMode:(enum TPDMapsAppTravelMode)travelMode {
+    NSURLQueryItem *startQueryItem = [NSURLQueryItem queryItemWithName:@"saddr" value:start];
+    NSURLQueryItem *destinationQueryItem = [NSURLQueryItem queryItemWithName:@"daddr" value:destination];
+    NSMutableArray *queryItems = [NSMutableArray arrayWithObjects:startQueryItem, destinationQueryItem, nil];
+    return queryItems;
+ }
 
 @end

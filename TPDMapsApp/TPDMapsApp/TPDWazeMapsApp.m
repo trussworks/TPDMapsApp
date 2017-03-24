@@ -12,7 +12,6 @@
 @import UIKit;
 
 #import "TPDWazeMapsApp.h"
-#import "TPDURLUtilities.h"
 
 static NSString *const mapsBaseURLString = @"waze://";
 
@@ -22,30 +21,17 @@ static NSString *const mapsBaseURLString = @"waze://";
     return @"Waze";
 }
 
-- (BOOL)isInstalled {
-    NSURL *mapsBaseURL = [NSURL URLWithString:mapsBaseURLString];
-    return [[UIApplication sharedApplication] canOpenURL:mapsBaseURL];
+- (NSURL *)baseURL {
+    return [NSURL URLWithString:mapsBaseURLString];
 }
 
-- (NSString *)identifier {
-    return mapsBaseURLString;
-}
-
-- (BOOL)openWithQuery:(NSString *)query {
-    NSDictionary *params = @{
-                             @"q" : query
-                             };
-    return OpenNSURLWithBaseURLStringAndParams(mapsBaseURLString, params);
-}
-
-- (BOOL)openForDirectionsWithStart:(NSString *)start
-                       destination:(NSString *)destination
-                        travelMode:(enum TPDMapsAppTravelMode)travelMode {
-    NSDictionary *params = @{
-                             @"q" : destination,
-                             @"navigate" : @"yes"
-                             };
-    return OpenNSURLWithBaseURLStringAndParams(mapsBaseURLString, params);
+- (NSArray<NSURLQueryItem *> *)queryItemsForDirectionsWithStart:(NSString *)start
+                                                    destination:(NSString *)destination
+                                                     travelMode:(enum TPDMapsAppTravelMode)travelMode {
+    NSURLQueryItem *destinationQueryItem = [NSURLQueryItem queryItemWithName:@"q" value:destination];
+    NSURLQueryItem *navigateQueryItem = [NSURLQueryItem queryItemWithName:@"navigate" value:@"yes"];
+    NSMutableArray *queryItems = [NSMutableArray arrayWithObjects:destinationQueryItem, navigateQueryItem, nil];
+    return queryItems;
 }
 
 @end
