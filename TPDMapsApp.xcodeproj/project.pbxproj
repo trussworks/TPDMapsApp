@@ -213,6 +213,7 @@
 					};
 					86DE9C0119C9033D00ADF38E = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = J74T7566DT;
 						TestTargetID = 86DE9BE819C9033C00ADF38E;
 					};
 				};
@@ -493,6 +494,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = J74T7566DT;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -509,6 +511,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = J74T7566DT;
 				INFOPLIST_FILE = TPDMapsAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tetherpad.$(PRODUCT_NAME:rfc1034identifier)";

@@ -102,4 +102,19 @@ typedef NS_ENUM(NSInteger, TPDMapsAppTravelMode) {
  */
 - (NSURL *)baseURL;
 
+/**
+ NSURLQueryItems corresponding to the query string sent to the maps app (like @"Cupertino" or @"37.77493,-122.419416".
+ 
+ @return An NSArray of NSURLQueryItem objects.
+ */
+- (NSArray<NSURLQueryItem *> *)queryItemsWithQuery:(NSString *)query;
+
+/**
+ NSURLQueryItems corresponding to the query string sent to the maps app for routing.
+ 
+ @return An NSArray of NSURLQueryItem objects.
+ */
+- (NSArray<NSURLQueryItem *> *)queryItemsForDirectionsWithStart:(NSString *)start
+                                  destination:(NSString *)destination
+                                   travelMode:(enum TPDMapsAppTravelMode)travelMode;
 @end

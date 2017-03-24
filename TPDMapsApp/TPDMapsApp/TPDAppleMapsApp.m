@@ -24,21 +24,18 @@ static NSString *const mapsBaseURLString = @"http://maps.apple.com/";
     return [NSURL URLWithString:mapsBaseURLString];
 }
 
-- (BOOL)openWithQuery:(NSString *)query {
-    NSDictionary *params = @{
-                             @"q" : query
-                             };
-    return OpenNSURLWithBaseURLStringAndParams(mapsBaseURLString, params);
+- (NSArray<NSURLQueryItem *> *)queryItemsWithQuery:(NSString *)query {
+    NSURLQueryItem *queryItem = [NSURLQueryItem queryItemWithName:@"q" value:query];
+    return @[queryItem];
 }
 
-- (BOOL)openForDirectionsWithStart:(NSString *)start
-                       destination:(NSString *)destination
-                        travelMode:(enum TPDMapsAppTravelMode)travelMode {
-    NSDictionary *params = @{
-                             @"saddr" : start,
-                             @"daddr" : destination
-                             };
-    return OpenNSURLWithBaseURLStringAndParams(mapsBaseURLString, params);
-}
+- (NSArray<NSURLQueryItem *> *)queryItemsForDirectionsWithStart:(NSString *)start
+                                  destination:(NSString *)destination
+                                   travelMode:(enum TPDMapsAppTravelMode)travelMode {
+    NSURLQueryItem *startQueryItem = [NSURLQueryItem queryItemWithName:@"saddr" value:start];
+    NSURLQueryItem *destinationQueryItem = [NSURLQueryItem queryItemWithName:@"daddr" value:destination];
+    NSMutableArray *queryItems = [NSMutableArray arrayWithObjects:startQueryItem, destinationQueryItem, nil];
+    return queryItems;
+ }
 
 @end
